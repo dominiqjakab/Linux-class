@@ -1,0 +1,99 @@
+Exercitiile deja rezolvate in ierarhia de fisiere si foldere
+
+1. Creati in home-ul userului dvs. urmatoarea ierarhie de fisiere si foldere (\ = folder; – = fisier):
+
+\Exercitiu1
+
+ \Retelistica
+
+   \Switch
+
+     – numar_porturi.jpg
+
+     – adresaMAC
+
+     – vitezaPort
+
+     -numarDevice
+
+     -versiuneOS
+
+   \Router
+
+ \Geografie
+
+   \Continente
+
+     \Europa
+
+       \Europa de Est
+
+          \Romania
+
+          \Bulgaria
+
+     \Asia
+
+   – harta romaniei.jpg
+
+   – harta europei.png
+
+ \Istorie
+
+   \Protocoale de Rutare
+
+     – OSPF.html
+
+     – EIGRP.pdf
+
+   – Mihai Viteazul.jpg
+
+   – A I Cuza.png
+
+ \Programare
+
+   \Python
+
+   \C\C++
+
+     – Introducere in algoritmi.pdf
+
+     – Dennis Ritchie.jpg
+
+     – tema_backtracking.c
+
+   \JAVA
+
+2. Redenumiti fisierul ‘numarDevice’ in ‘deviceActiv’.
+
+	mv numarDevice deviceActiv	
+
+3. Mutati ‘harta romaniei’ in folderul corespunzator tarii din folderul ‘Geografie’.
+
+	mv harta_romaniei /Geografie/Europa/Europa_de_Est/Romania 	
+
+4. Stergeti folderul ‘JAVA’.
+
+	rm -rf JAVA/
+
+5. Mutati intregul folder numit ‘Programare’ (cu tot cu fisierele continute), in folderul ‘Retelistica’.
+
+	mv Programare Exercitii/Exercitiul1/Retelistica
+
+6. Creati in ‘/home/user/Teme’ un folder numit ‘Imagini’ in care copiati toate fisierele cu extensia .jpg din ierarhia fisierelor create la exercitiul 1.
+
+	mkdir Imagini
+	
+	find . (/home/dj/Desktop/Exercitii)  -name "*.jpg" -exec cp  {} /home/dj/Desktop/Imagini \; (for copy, mv for move)
+
+7. In interfata grafica (cu mouse-ul), faceti acelasi lucru, de data aceasta in folderul ‘~/Teme/Imagini2’ pe care il creati voi.
+
+8. Stergeti fisierele, din toata ierarhia creata anterior, al caror nume se termina cu extensie (ex: jpg, png, html etc.).
+
+	find . -name "*.txt or .png or etc." -exec -delete
+
+9. Scrieti textul „Linux Rulz“ intr-un fisier, in folderul ‘Downloads’ din ‘home’, folosind interfata grafica. Apoi din linia de comanda, afisati continutul fisierului.
+
+	touch fisier.txt
+	echo "Linux Rulz" > fisier.txt
+	cat fisier.txt

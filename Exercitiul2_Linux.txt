@@ -1,0 +1,49 @@
+1. Folositi ‘ls’ pentru a lista fisierele in ordinea inversa a datei in care au fost modificate.
+
+	ls -l -tr
+
+2. Creati un alias astfel incat comanda ‘grep’ sa ruleze implicit in modul color. Salvati modificarea in setarile bash-ului.
+
+	alias -create alias alias mycmdgrep'ls --color=auto'
+
+3. Afisati toate alias-urile create.
+
+	alias
+
+4. Numarati toate fisierele din ‘/etc’ ce incep cu litera ‘a’.
+
+	ls -f a* | wc -l
+	find . -type f -name "a*" | wc -l (arata si din subdirectoare)
+	
+5. Afisati toate fisierele din ‘/etc/’ cu extensia ‘.conf’.
+
+	find . -type f -name "*.conf"
+
+6. Modificati prompt-ul utilizatorului fara privilegii in ‘#’ (in loc de ‘$’).
+	
+	
+7. Setati prompt-ul in culoarea rosu pentru root. (HINT: http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/).
+
+	copie dupa $PS1
+	echo $PS1 
+	la codul de culori ...[01,32m].... se modifica cu alt cod
+
+8. Explicati functionarea comenzilor ‘pushd’ si ‘popd’. Cum putem afisa ierarhia de foldere, fara a o modifica?
+
+	folosite pt navigare, stocheaza in stiva locatiile
+
+9. Scrieti cateva randuri intr-un fisier. Apoi afisati-le in terminal, in ordine inversa.
+
+	cat fisier.txt -n | tac
+
+10. Executati comanda ‘cat /dev/random’. Ce se intampla ? Ce reprezinta fisierul ‘/dev/random’ ?
+
+	/dev/random - generator de caractere random
+
+11. Afisati numele tuturor fisierelor si directoarelor din /etc/ care incep cu litera z.
+
+	find . -type f -name "z*"
+
+12. Afisati numele tuturor fisierelor din /etc/ care incep cu litera a si au extensia .conf
+
+	find . -type f -name "a*.conf" 

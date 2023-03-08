@@ -1,0 +1,73 @@
+In aceasta sectiune practica ne vom ocupa de useri si de drepturile de fisiere. Spor la treaba!
+
+1. Creati urmatoarea ierarhie de fisiere si directoare, in home-ul utilizatorului ‘student’, tinand cont de permisiunile lor:
+
+Europa : drwxr-x---
+_ Germania :-rwxrwx-wx
+- Franta:-r--r--r--
+- Italia:-r-xr-x---
+- Spania:-rw--wx--x
+- Romania:----------
+- Bulgaria:--wxr-xr-x
+
+useradd -m -d /home/student -s /bin/bash -c "student" student
+
+a trebuit sa dau drepturi de read/execute pt other de pe dj ca sa intru si sa creez fisiere, care au fost facute cu extensie.txt
+
+2. Schimbati permisiunile tuturor fisierelor din ‘Europa’ (in mod recursiv), astfel incat toti utilizatorii din grupul ‘student’ sa aiba drepturi de citire si scriere asupra fisierelor.
+
+	sudo chmod -R 765 Europa/
+
+3. Scrieti un script care sa elimine toate drepturile altor utilizatori (other) pentru fisierele care se termina cu caracterele ‘ia’ din directorul ‘Europa’.
+
+	#!/bin/bash/
+
+	for f in *.*
+	do
+        	if [[ ${f%.*} = *ia ]]
+                	then
+                        	echo $f
+                        	chmod 750 $f
+                        	ls -l $f
+       			 else
+                        	echo "File not ending in ia"
+       		 fi
+	done
+
+
+4.Creati utilizatorii ana, gigel, chuck.
+
+Autentificati-va ca utilizatorul ana.
+
+In home, creati fisierele ‘mere’ si ‘pere’ continand, respectiv, textele ‘Ana are mere’ si ‘Ana are pere’.
+
+Modificati permisiunea fisierului ‘mere’ astfel incat gigel sa nu-l poata citi dar sa-l poata scrie, pastrand nemodificate celelalte permisiuni. Folositi doar optiunile numerice pentru ‘chmod’.
+
+	sudo chmod 752 mere.txt
+
+Modificati permisiunile fisierului ‘pere’ astfel incat chuck sa-l poata modifica si citi. Folositi permisiuni numerice. Nu modificati alte permisiuni.
+
+	sudo chmod 756 pere.txt
+
+Verificati permisiunile.
+
+5. Pentru urmatorul exercitiu, aveti nevoie de user-ii ‘cameron’ si ‘putin’. Asigurati-va ca acestia exista, daca nu, va trebui sa ii adaugati voi.
+
+Logati-va ca utilizatorul ‘cameron’ vizualizati permisiunile directorului ‘~cameron’ si ‘~putin’.
+
+Logati-va ca ‘putin’ listati continutul directorului ‘~cameron’.
+
+‘cameron’ doreste ca home-ul lui sa fie privat. Eliminati toate drepturile de acces pentru grup si others pentru directorul ‘~cameron’.
+
+Verificati ca ‘putin’ nu poate accesa sau vizualiza continutul directorului ‘/home/cameron’.
+
+6. ‘cameron’ doreste sa gazduiasca o pagina publica personala. Pentru aceasta creeaza directorul ‘public_html’ (creati-l) in home-ul propriu. Serverul web trebuie sa acceseze acest director si continutul acestuia dar ‘cameron’ vrea sa-si pastreze ‘~’ privat.
+
+Creati fisierele ‘index.html’ in ‘public_html’ si ‘secret’ in home-ul lui ‘cameron’.
+
+Setati bitul ‘x’ pentru others pentru directorul ‘~cameron’ si verificati ca ‘obama’ poate accesa directorul ‘/home/cameron/public_html’ si fisierul ‘index.html’ dar nu poate afisa continutul directorului ‘~cameron’.
+
+	public_html - index.html 751
+	secret.txt		700/750
+
+	putin acceseaza cameron/public_html/index.html dar nu poate lista cameron

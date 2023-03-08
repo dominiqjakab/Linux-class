@@ -1,0 +1,43 @@
+In aceasta sectiune cu exercitii ne vom focusa pe crearea de scripturi folosind Bash. Iata o lista cu scripturile pe care te invit sa le faci:
+
+1. Scrieti si rulati un script numit my_data.sh in care: definiti 3 variabile (nume, prenume, varsta), completati variabilele cu valori corespunzatoare
+, afisati variabilele separate prin caracterul ‘$’.
+
+	my_data.sh
+
+2. Scrieti un script care afiseaza numarul de argumente primite si pe aceeasi linie, primele 2 argumente separate prin ‘\’ (backslash).
+
+	number_arg.sh
+
+3. Scrieti un script care daca primeste 2 argumente afiseaza mesajul ‘Corect!’, iar daca nu, afiseaza mesajul ‘Mai incearca!’.
+
+	two_arguments.sh
+
+4. Scrieti un script care primeste ca argument un numar si afiseaza ‘par’ sau ‘impar’, in functie de paritatea numarului.
+
+	odd_even.sh
+	
+5. Scrieti un script ce afiseaza utilizatorului pe rand un prompt: ‘Introduceti nume:’, ‘Introduceti prenume’. Cititi valorile introduse si afisati pe
+2 linii, numele urmat de lungimea sa si respectiv prenumele, urmat de lungimea sa, pe linia urmatoare.
+
+	name_length.sh
+
+6. Scrieti un script ce primeste ca argumente o operatie (+, -, *) si doua numere si afiseaza rezultatul operatiei dintre cele doua numere.
+
+	./operation.sh   - cu mentiunea ca la inmultire este o problema cu operaturl * - confunda cu folderul curent.
+	Rezolvare: \* la apelare functie si in calculul operatiei.
+
+7. Scrieti un script care calculeaza suma numerelor de la 1 la N, unde N este primit ca argument.
+
+	./sum.sh
+
+8. Scrieti un script care calculeaza suma numerelor din fisierul ‘numbers.txt’. Numerele se gasesc cate unul pe linie.
+
+	./sum_file.sh
+
+9. Construiti un script care primeste pe rand numere de la utilizator si face suma lor, pana la intalnirea valorii zero. Scriptul va afisa suma
+partiala inaintea fiecarui numar introdus.
+
+	./sum_input.sh
+
+### Scripturile se afla in acest fisier. ###

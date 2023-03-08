@@ -1,0 +1,7 @@
+apples
+oranges
+pears
+kiwis
+bananas
+peaches
+strawberry

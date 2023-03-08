@@ -1,0 +1,28 @@
+# Mai multe exercitii 
+
+1.Rulati comanda ifconfig. Ea afiseaza detalii despre interfetele de retea. Cautati paragraful corespunzator interfetei eth0 si gasiti adresa de ip
+a acesteia. Folosind cele invatate pana acum scrieti un one-liner ce afiseaza pe ecran numai adresa ip a acestei interfete. (Hint: grep, cut, tr)
+
+	ifconfig | grep inet | head -n 1 | awk '{print$2}'
+
+	sau
+
+	ip addr | grep inet | grep enp0s3 | awk '{print$2}'
+
+2.Afisati continutul fisierului /proc/cpuinfo. Obtineti doar numele procesorului printr-un one-liner.
+
+	cat cpuinfo | grep 'model name' | head -n 1 | cut -d ':' -f2
+
+3.Folosind fisierul /proc/meminfo scrieti un one-liner (un sir de comenzi pe o singura linie, fara a fi nevoie de un script) care afiseaza memoria 
+disponibila si memoria totala instalata.
+
+	cat meminfo  | egrep 'MemTotal|MemAvailable'
+
+4.Comanda traceroute google.com afiseaza pe ecran calea catre serverul Google. Salvati aceste rute in fisierul routes.txt (Hint: I/O redirection >)
+	
+	touch routes.txt
+	traceroute google.com > routes.txt
+
+5.Afisati continutul fisierului routes.txt, ignorand liniile cu * * *
+	
+	cat routes.txt | head -n 4
